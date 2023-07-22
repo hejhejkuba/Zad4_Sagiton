@@ -15,7 +15,7 @@ public class NamesService {
         try {
             name = Names.class.getDeclaredField(value);
         } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Not such a field");
         }
         MyTarget nameAnnotation = name.getAnnotation(MyTarget.class);
         String nameValue = nameAnnotation.value();
